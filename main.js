@@ -7,7 +7,16 @@ const carouselBtnPrev = document.getElementById('carousel-button-prev');
 carouselBtnNext.addEventListener('click', moveToNextSlide);
 carouselBtnPrev.addEventListener("click", moveToPrevSlide);
 
+function hideAllSlides() {
+  for (const slide of slides) {
+    slide.classList.remove('carousel-item-visible');
+    slide.classList.add('carousel-item-hidden');
+  }
+}
+
 function moveToNextSlide() {
+  hideAllSlides();
+
   if (slidePosition === totalSlides - 1) {
     slidePosition = 0;
   } else {
