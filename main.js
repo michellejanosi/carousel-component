@@ -37,3 +37,9 @@ function moveToPrevSlide() {
 
   slides[slidePosition].classList.add('carousel-item-visible');
 }
+
+function automate() {
+  setInterval(moveToNextSlide, 2000);
+}
+
+automate();
